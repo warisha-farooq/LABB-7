@@ -1,33 +1,32 @@
 ﻿using System;
 
 namespace MultiLevelInheritance {
-    // Level 1: Device (Top of the chain)
+   
     public class Device {
         public virtual void PowerOn() {
             Console .WriteLine("Device: Generic power-on sequence initiated.");
         }
     }
 
-    // Level 2: KitchenAppliance public class KitchenAppliance : Device
-
+    
 {
     public override void PowerOn() {
         base .PowerOn();
-        // Calls Device.PowerOn() Console.WriteLine("KitchenAppliance: Checking kitchen safety protocols.");
+        rotocols.");
     }
 }
 
-// Level 3: Microwave (Bottom of the chain)
+
 public class Microwave : KitchenAppliance {
     public override void PowerOn() {
         base .PowerOn();
-        // Calls KitchenAppliance.PowerOn() Console.WriteLine("Microwave: Internal light turned on. Ready to heat.");
+       on. Ready to heat.");
     }
 }
 
 class Program {
     static void Main(string[] args) {
-        // Creating a Microwave object Microwave myMicrowave = new Microwave();
+        
         Console .WriteLine("--- Powering On Microwave ---");
         myMicrowave .PowerOn();
         Console .ReadLine();
